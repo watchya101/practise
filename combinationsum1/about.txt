@@ -1,0 +1,16 @@
+n is total number of elements.
+in version 2 we print subsequences in reverse oreder.
+base case being when we reach ind(index) == n then we are ready to print that subsequence.
+the function we created checks the base case if not satisfied we do recursion and call the function again
+while calling it we increment the index also pass other parameters 
+then we decide weather to pick or not pick the next element with the logic by adding it to ds then after that step we also make sure to remove it.
+removing will make is not pick that element and after that we call the function with index+1 going to next index
+and soo on we get the final output.
+
+
+the main pattern is as this printX is a function here and this code will be in the printX function.
+
+ds.push_back(arr[ind]);
+    printX(ind+1, ds, arr, n);
+     ds.pop_back();
+       printX(ind+1, ds, arr, n);
