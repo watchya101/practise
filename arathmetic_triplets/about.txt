@@ -1,0 +1,17 @@
+in this problem the triplets should have difference between them same.
+for example if ip is [0,1,4,6,7,10] and we take diff as 3 then at index 1,2,4 we have numbers if we subtracted nums[j]-nums[i] && nums[k]-nums[j] their diff will be same.
+such that i<j<k
+constrains are 3<=nums.length <=200
+0<=nums[i]<=200
+i<=diff<=50
+and nums is in increasing order
+in arathmetic_tripletsV1 we have brute approach with n^3 complexity which is not efficient other approach will be in arathmetic numbers v2.
+
+the other approach will be using map/sets
+in the method with map we can make an array with 201 size initialized at 0 or we can create a map<int,int> then we increment value at which we encounter a value in nums.
+then we loop seperately to check if the value in nums has certain value which is current value - diff and current value- 2* diff if that condition is true its a triplets. because the value in the array or map at the position current value -diff is 1 which means its true and current - 2*diff.
+then we return ans;
+in sets method we can just make a set<int> s(nums.begin(),nums.end());
+then iterate over it till we find value current-diff and current-2*diff.
+(s.find(i-diff)!=s.end()&& s.find(i-2*diff)!=s.end()) if condition ture we inc ans and giveout output
+ the time complexity for v2 will be approx o(n+n) which is o(n).
